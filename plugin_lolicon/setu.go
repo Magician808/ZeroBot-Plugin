@@ -60,22 +60,24 @@ func init() {
 				}
 			}
 			zero.RangeBot(func(id int64, ctx2 *zero.Ctx) bool { // test the range bot function
-				ctx.Send("准备图片ing,请稍等片刻(冷却:60s)")
+				msg_id3 := ctx.Send("准备图片ing,请稍等片刻(冷却:60s)")
 				var pid, uid, title, author, urls string
 				querylolicon(cmd.Args, &pid, &uid, &title, &author, &urls)
 				if urls != "" {
 					//msg_id := ctx.SendChain(message.Image(urls), message.Reply(receivedmsgid), message.Text(fmt.Sprintf("pid: %s\nuid: %s\ntitle: %s\nauthor: %s\nurl: %s", pid, uid, title, author, urls)))
-					ctx.Send(message.ReplyWithMessage(receivedmsgid, message.Text(fmt.Sprintf("pid: %s\nuid: %s\ntitle: %s\nauthor: %s\nurl: %s", pid, uid, title, author, urls))))
-					msg_id := ctx2.SendGroupMessage(ctx.Event.GroupID, message.Image(urls))
+					msg_id2 := ctx.Send(message.ReplyWithMessage(receivedmsgid, message.Text(fmt.Sprintf("pid: %s\nuid: %s\ntitle: %s\nauthor: %s\nurl: %s", pid, uid, title, author, urls))))
+					msg_id1 := ctx2.SendGroupMessage(ctx.Event.GroupID, message.Image(urls))
 					/*rsp := ctx.CallAction("send_group_msg", zero.Params{
 						"group_id": ctx.Event.GroupID,
 						"message":  message.Image(querysetu(cmd.Args)),
 					}).Data.Get("message_id")*/ //另一种实现方式
 					time.Sleep(recalltime * time.Second)
-					ctx2.DeleteMessage(msg_id)
+					ctx2.DeleteMessage(msg_id1)
+					ctx2.DeleteMessage(msg_id2)
 				} else {
 					ctx.Send("图片不存在或网络错误")
 				}
+				ctx2.DeleteMessage(msg_id3)
 				return true
 			})
 		})
