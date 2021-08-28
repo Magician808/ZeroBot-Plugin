@@ -18,6 +18,7 @@ import (
 
 	// 娱乐类
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_ai_false"  // 服务器监控
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_hs"        // 炉石
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_minecraft" // MCSManager
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_music"     // 点歌
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_omikuji"   // 浅草寺求签
@@ -30,6 +31,7 @@ import (
 
 	// 二次元图片
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_acgimage"     // 随机图片与AI点评
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_aiwife"       // 随机老婆
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_image_finder" // 关键字搜图
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_lolicon"      // lolicon 随机图片
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_saucenao"     // 以图搜图

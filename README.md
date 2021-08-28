@@ -48,8 +48,8 @@
     - [x] 设置欢迎语[欢迎~]
     - [x] 在MM月dd日的hh点mm分时(用http://url)提醒大家xxx
     - [x] 在MM月[每周|周几]的hh点mm分时(用http://url)提醒大家xxx
-	- [x] 取消在MM月dd日的hh点mm分的提醒
-	- [x] 取消在MM月[每周|周几]的hh点mm分的提醒
+    - [x] 取消在MM月dd日的hh点mm分的提醒
+    - [x] 取消在MM月[每周|周几]的hh点mm分的提醒
     - [x] 列出所有提醒
     - [x] 翻牌
     - [x] [开启|关闭]入群验证
@@ -75,6 +75,8 @@
     - [x] 异世界转生[@xxx]
     - [x] 卖萌[@xxx]
     - [x] 抽老婆[@xxx]
+- **AIWife** `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin_aiwife"`
+    - [x] waifu|随机waifu(从[100000个AI生成的waifu](https://www.thiswaifudoesnotexist.net/)中随机一位)
 - **gif** `import _ "github.com/tdf1939/ZeroBot-Plugin-Gif/plugin_gif"`
     - [x] 爬[@xxx]
     - [x] 摸[@xxx]
@@ -112,6 +114,10 @@
 - **minecraft** `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin_minecraft"`
     - [x] 具体指令看代码
     - 注：此功能实现依赖[MCSManager](https://github.com/Suwings/MCSManager)项目对服务器的管理api，mc服务器如果没有在该管理平台部署此功能无效
+ - **炉石** `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin_hs"`
+    - [x] 搜卡[xxxx] 
+    - [x]  [卡组代码xxx]
+    - 注：更多搜卡指令参数：https://hs.fbigame.com/misc/searchhelp
 - **TODO...**
 
 ## 使用方法
@@ -125,7 +131,7 @@
 | [yyuueexxiinngg/cqhttp-mirai](https://github.com/yyuueexxiinngg/cqhttp-mirai) | [Mirai](https://github.com/mamoe/mirai) | yyuueexxiinngg |  |
 | [takayama-lily/onebot](https://github.com/takayama-lily/onebot) | [OICQ](https://github.com/takayama-lily/oicq) | takayama |  |
 
-### 使用稳定版/测试版
+### 使用稳定版/测试版 (推荐)
 可以前往[Release](https://github.com/FloatTech/ZeroBot-Plugin/releases)页面下载对应系统版本可执行文件，编译时开启了全部插件。
 
 ### 本地运行
@@ -137,13 +143,14 @@
 
 ### 编译运行
 
-#### 利用 Actions 在线编译 (推荐)
+#### 利用 Actions 在线编译
 1. 点击右上角 Fork 本项目，并转跳到自己 Fork 的仓库
 2. 点击仓库上方的 Actions 按钮，确认使用 Actions
-3. 编辑 main.go 文件，内容按需修改，提交修改后 Actions 自动执行
-4. 点击 Actions 按钮，等待编译完成，在 Actions 里下载编译好的文件
-5. 运行 OneBot 框架，并同时运行本插件
-6. 啾咪~
+3. 编辑 main.go 文件，内容按需修改
+4. 前往 Release 页面发布一个 Release，`tag`形如`vx.y.z`，以触发稳定版编译流程
+5. 点击 Actions 按钮，等待编译完成，回到 Release 页面下载编译好的文件
+6. 运行 OneBot 框架，并同时运行本插件
+7. 啾咪~
 
 #### 本地编译/交叉编译
 1. 下载安装 [Go](https://studygolang.com/dl) 环境
