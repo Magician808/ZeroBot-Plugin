@@ -10,7 +10,7 @@ import (
 
 func querylolicon(keyword string, pid *string, uid *string, title *string, author *string, urls *string) {
 	clientsetu := http.Client{}
-	req, err := http.NewRequest("GET", "https://api.lolicon.app/setu/v2?keyword="+url.QueryEscape(keyword), nil)
+	req, err := http.NewRequest("GET", "https://api.lolicon.app/setu/v2?r18=1?keyword="+url.QueryEscape(keyword), nil)
 	if err != nil {
 		return
 	}
